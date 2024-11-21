@@ -1,0 +1,574 @@
+@charset "utf-8";
+/* Declaração do tipo de codificação de caracteres */
+
+/* Definindo um estilo global para todos os elementos */
+* {
+    margin: 0px;
+    /* Remove a margem padrão */
+    padding: 0px;
+    /* Remove o preenchimento padrão */
+    box-sizing: border-box;
+    /* Faz com que o padding e border sejam incluídos no cálculo de tamanho dos elementos */
+    font-family: Arial, Helvetica, sans-serif;
+    /* Define a fonte padrão para a página */
+}
+
+/* Estilo para o corpo da página */
+body {
+    text-align: center;
+    /* Centraliza o texto no corpo da página */
+    font-size: 20px;
+    /* Define o tamanho da fonte */
+    padding: 0px;
+    /* Remove qualquer preenchimento do corpo */
+    background-color: white;
+    /* Define a cor de fundo do corpo como branca */
+}
+
+/* Estilos para o cabeçalho (header) */
+header {
+    display: flex;
+    /* Usa o modelo de layout flexbox */
+    align-items: center;
+    /* Alinha os itens do cabeçalho verticalmente no centro */
+    justify-content: space-between;
+    /* Distribui os itens com o máximo de espaço entre eles */
+    padding: 0px 10px 0px 10px;
+    /* Define o preenchimento (esquerda e direita) do cabeçalho */
+    background-color: rgb(0, 0, 0);
+    /* Define o fundo do cabeçalho como preto */
+    height: 60px;
+    /* Define a altura do cabeçalho */
+}
+
+/* Estilo para a barra de pesquisa */
+.search-bar {
+    flex-grow: 1;
+    /* Faz com que a barra de pesquisa ocupe o máximo de espaço disponível */
+    display: flex;
+    /* Usa o modelo de layout flexbox */
+    justify-content: center;
+    /* Alinha o conteúdo horizontalmente ao centro */
+    align-items: center;
+    /* Alinha o conteúdo verticalmente ao centro */
+    margin: 0;
+    /* Remove qualquer margem padrão */
+}
+
+/* Estilo para o campo de entrada dentro da barra de pesquisa */
+.search-bar input {
+    width: 70%;
+    /* Define a largura do campo de entrada como 70% do espaço disponível */
+    padding: 12px;
+    /* Adiciona 12px de preenchimento dentro do campo de entrada */
+    font-size: 16px;
+    /* Define o tamanho da fonte para o texto no campo */
+    border: 1px solid #ccc;
+    /* Define a borda como 1px de cor cinza clara */
+    border-radius: 4px 0 0 4px;
+    /* Aplica bordas arredondadas, deixando o canto superior esquerdo e inferior esquerdo arredondados */
+    outline: none;
+    /* Remove o contorno que aparece quando o campo é selecionado */
+}
+
+/* Estilo para o botão de pesquisa */
+.search-button {
+    padding: 12px;
+    /* Adiciona 12px de preenchimento dentro do botão */
+    font-size: 16px;
+    /* Define o tamanho da fonte dentro do botão */
+    background-color: #ffffff;
+    /* Define o fundo do botão como branco */
+    color: #fff;
+    /* Define a cor do texto dentro do botão como branco */
+    border-left: none;
+    /* Remove a borda esquerda do botão */
+    border: none;
+    /* Remove as bordas do botão */
+    border-radius: 0 4px 4px 0;
+    /* Aplica bordas arredondadas nos cantos direito superior e inferior */
+    cursor: pointer;
+    /* Define o cursor como ponteiro para indicar que é clicável */
+    outline: none;
+    /* Remove o contorno que aparece quando o botão é selecionado */
+}
+
+/* Estilo para o ícone dentro do botão de pesquisa */
+.search-button>img {
+    width: 16px;
+    /* Define a largura do ícone de imagem dentro do botão */
+    height: 16px;
+    /* Define a altura do ícone de imagem dentro do botão */
+}
+
+/* Estilo para o valor (por exemplo, preço ou outro texto) */
+.valor {
+    font-size: 30px;
+    /* Define o tamanho da fonte como 30px */
+    color: #1815d1;
+    /* Define a cor do texto como um tom de azul */
+    font-weight: bold;
+    /* Define o peso da fonte como negrito */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    margin-top: 10px;
+    /* Adiciona uma margem de 10px no topo para separar do conteúdo acima */
+}
+
+.search-button>img {
+    width: 16px;
+    /* Define a largura da imagem dentro do botão como 16px */
+    height: 16px;
+    /* Define a altura da imagem dentro do botão como 16px */
+}
+
+/* Estilo do menu de navegação (nav) */
+nav ul {
+    display: flex;
+    /* Exibe os itens da lista em uma linha, usando o layout flex */
+    gap: 10px;
+    /* Define um espaçamento de 10px entre os itens */
+    list-style-type: none;
+    /* Remove os marcadores de lista (bolinhas) */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o preenchimento (padding) padrão */
+    align-items: flex-end;
+    /* Alinha os itens ao final do eixo transversal (parte inferior) */
+}
+
+/* Estilo dos links dentro do menu de navegação */
+nav ul li a {
+    display: block;
+    /* Faz com que o link ocupe toda a área do item da lista */
+    padding: 5px;
+    /* Adiciona um preenchimento de 5px ao redor do link */
+    color: #ffffff !important;
+    /* Define a cor do texto como branca e garante que seja aplicada */
+    font-size: 12px;
+    /* Define o tamanho da fonte do link */
+    text-decoration: none;
+    /* Remove o sublinhado padrão do link */
+    border-radius: 15px;
+    /* Adiciona bordas arredondadas aos links */
+    background-color: transparent;
+    /* Define o fundo do link como transparente */
+    transition: background-color 0.3s;
+    /* Aplica uma transição suave para a cor de fundo */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* Define a fonte do texto */
+}
+
+/* Estilo para o menu de categorias */
+.categories ul {
+    padding: 10px;
+    /* Adiciona 10px de preenchimento ao redor da lista */
+    background-color: #0f0e0e;
+    /* Define o fundo da lista como uma cor escura */
+    text-align: center;
+    /* Alinha os itens da lista ao centro */
+    border-top: 2px solid #ddd;
+    /* Adiciona uma borda superior de 2px de cor clara */
+    justify-content: space-evenly;
+    /* Distribui os itens uniformemente ao longo da linha */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+}
+
+/* Estilo dos links dentro do menu de categorias */
+.categories ul li a {
+    color: #ffffff !important;
+    /* Define a cor do texto como branca e garante que seja aplicada */
+    font-size: 12px;
+    /* Define o tamanho da fonte do link */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    background-color: transparent;
+    /* Define o fundo do link como transparente */
+    transition: background-color 0.3s;
+    /* Aplica uma transição suave para a cor de fundo */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* Define a fonte do texto */
+}
+
+/* Estilo para quando o usuário passar o mouse sobre os links do menu de navegação */
+nav ul li a:hover {
+    color: #b6b6b6 !important;
+    /* Muda a cor do texto para um cinza claro quando o mouse passa sobre o link */
+}
+
+/* Contêiner do carrossel */
+.carousel-container {
+    max-width: auto;
+    /* A largura máxima do contêiner é ajustada automaticamente */
+    min-width: auto;
+    /* A largura mínima do contêiner é ajustada automaticamente */
+    width: 100%;
+    /* O carrossel ocupa 100% da largura do contêiner pai */
+    height: auto;
+    /* A altura do carrossel é ajustada automaticamente com base no conteúdo */
+    margin-top: auto;
+    /* O topo do carrossel é automaticamente ajustado */
+    margin-bottom: auto;
+    /* A parte inferior do carrossel é automaticamente ajustada */
+    position: relative;
+    /* A posição do carrossel é relativa para o posicionamento dos controles */
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassar os limites do contêiner */
+}
+
+/* Slides do carrossel */
+.carousel-slide {
+    display: flex;
+    /* Exibe os slides como um layout flexível */
+    width: 100%;
+    /* A largura do slide é 100% do carrossel */
+    transition: transform 0.5s ease-in-out;
+    /* Aplica uma transição suave ao mover os slides */
+}
+
+/* Estilo das imagens dentro dos slides */
+.carousel-slide img {
+    width: 100%;
+    /* As imagens ocupam 100% da largura do slide */
+    height: 100%;
+    /* As imagens ocupam 100% da altura do slide */
+    object-fit: cover;
+    /* A imagem cobre completamente o espaço do slide, mantendo sua proporção */
+    background-repeat: no-repeat;
+    /* Previne a repetição da imagem de fundo */
+}
+
+/* Estilo para o contêiner dos pontos (dots) */
+.dots-container {
+    display: flex;
+    /* Define o contêiner como flexível, alinhando seus itens (os pontos) horizontalmente */
+    justify-content: center;
+    /* Centraliza os pontos dentro do contêiner */
+    margin-top: 10px;
+    /* Adiciona um espaçamento de 10px na parte superior do contêiner */
+}
+
+/* Estilo para cada ponto (dot) */
+.dot {
+    width: 10px;
+    /* Define a largura de cada ponto como 10px */
+    height: 10px;
+    /* Define a altura de cada ponto como 10px, formando um quadrado */
+    margin: 0 5px;
+    /* Adiciona uma margem de 5px à esquerda e à direita de cada ponto */
+    border-radius: 50%;
+    /* Torna os pontos circulares (com bordas arredondadas de 50%) */
+    background-color: #ccc;
+    /* Define a cor de fundo de cada ponto como um cinza claro (#ccc) */
+    cursor: pointer;
+    /* Altera o cursor para a mãozinha (pointer) quando o usuário passa o mouse sobre o ponto */
+}
+
+/* Estilo para o ponto ativo (selecionado) */
+.dot.active {
+    background-color: black;
+    /* Quando o ponto tem a classe 'active', ele ganha a cor de fundo preta */
+}
+
+/* Lista de produtos */
+.product-list {
+    margin-top: 50px;
+    /* Adiciona um espaço de 50px acima da lista de produtos */
+    display: flex;
+    /* Define o container como flexível */
+    flex-wrap: wrap;
+    /* Permite que os itens que não couberem na linha atual desçam para a próxima linha */
+    gap: 35px;
+    /* Define o espaçamento entre os itens */
+    justify-content: space-between;
+    /* Distribui os itens uniformemente, com espaçamento entre eles */
+}
+
+/* Estilo para cada item (produto) na lista */
+.product-list article {
+    flex: 1 1 30%;
+    /* Cada item ocupa no mínimo 30% do espaço da linha */
+    box-sizing: border-box;
+    /* Garante que o padding e border não influenciem o tamanho do item */
+}
+
+/* Estilo para a descrição do produto */
+.desc {
+    font-size: 16px;
+    /* Define o tamanho da fonte da descrição como 16px */
+    margin: 10px 0;
+    /* Adiciona 10px de espaço acima e abaixo da descrição */
+}
+
+/* Estilo para o preço do produto */
+.valor {
+    font-size: 18px;
+    /* Define o tamanho da fonte do preço como 18px */
+    color: green;
+    /* Define a cor do preço como verde */
+    margin: 10px 0;
+    /* Adiciona 10px de espaço acima e abaixo do preço */
+}
+
+/* Estilo para o botão de compra */
+.comprar-btn {
+    background-color: #007bff;
+    /* Define a cor de fundo do botão como azul */
+    color: white;
+    /* Define a cor do texto como branco */
+    padding: 10px;
+    /* Adiciona 10px de espaço ao redor do conteúdo do botão */
+    border: none;
+    /* Remove qualquer borda do botão */
+    cursor: pointer;
+    /* Altera o cursor para uma mãozinha ao passar sobre o botão */
+    width: 100%;
+    /* O botão ocupa 100% da largura disponível do seu container */
+    font-size: 16px;
+    /* Define o tamanho da fonte do texto no botão como 16px */
+    border-radius: 10px;
+    /* Adiciona bordas arredondadas ao botão */
+}
+
+/* Efeito de hover para o botão de compra */
+.comprar-btn:hover {
+    background-color: #0056b3;
+    /* Muda a cor do fundo do botão para um azul mais escuro ao passar o mouse */
+}
+
+.footer {
+    background-color: black;
+    /* Define o fundo do footer como preto */
+    color: white;
+    /* Define a cor do texto no footer como branco */
+    text-align: center;
+    /* Centraliza o conteúdo dentro do footer */
+    padding: 10px 0;
+    /* Define um padding de 10px nas partes superior e inferior, e 0px nas laterais */
+    position: relative;
+    /* Posiciona o footer normalmente no fluxo do documento */
+    bottom: 0;
+    /* Posiciona o footer na parte inferior do seu container */
+    width: 100%;
+    /* Faz com que o footer ocupe toda a largura da tela */
+    display: block;
+    /* Garante que o footer se comporte como um bloco, ocupando toda a largura disponível */
+    margin-top: 30px;
+    /* Adiciona uma margem de 30px no topo do footer, separando-o dos elementos acima */
+}
+
+/* Estilo para os links no footer */
+.footer ul {
+    list-style-type: none;
+    /* Remove os marcadores da lista */
+    margin: 0px;
+    /* Remove a margem externa da lista */
+    padding: 0;
+    /* Remove o preenchimento interno da lista */
+    display: flex;
+    /* Exibe os itens da lista em linha (flexbox) */
+    justify-content: center;
+    /* Centraliza os itens da lista dentro do container */
+}
+
+.footer ul li a {
+    color: white;
+    /* Define a cor do texto como branco */
+    text-decoration: none;
+    /* Remove o sublinhado padrão dos links */
+    font-size: 16px;
+    /* Define o tamanho da fonte como 16px */
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+    /* Adiciona um sublinhado quando o mouse passa sobre o link */
+}
+
+.footer article img {
+    margin-top: 0px;
+    /* Remove qualquer margem superior da imagem */
+}
+
+
+.departamentos {
+    text-align: left;
+    /* Alinha o conteúdo da seção à esquerda */
+    margin-left: 20px;
+    /* Adiciona uma margem de 20px à esquerda da seção */
+    font-size: 12px;
+    /* Define o tamanho da fonte como 12px */
+}
+
+.departamentos ol {
+    list-style-type: none;
+    /* Remove os marcadores da lista */
+    margin-left: 20px;
+    /* Adiciona uma margem à esquerda da lista */
+    margin-top: 8px;
+    /* Adiciona um espaçamento de 8px acima da lista */
+}
+
+.departamentos li {
+    margin-bottom: 8px;
+    /* Define um espaçamento entre os itens da lista */
+}
+
+.centralatendimento {
+    text-align: left;
+    /* Alinha o conteúdo da seção à esquerda */
+    margin-left: 300px;
+    /* Adiciona uma margem de 300px à esquerda da seção */
+    font-size: 12px;
+    /* Define o tamanho da fonte como 12px */
+    margin-top: -176px;
+    /* Aplica uma margem negativa no topo, movendo a seção para cima */
+}
+
+.centralatendimento ol {
+    list-style-type: none;
+    /* Remove os marcadores da lista */
+    margin-left: 20px;
+    /* Adiciona uma margem à esquerda da lista */
+    margin-top: 8px;
+    /* Adiciona um espaçamento de 8px acima da lista */
+}
+
+.centralatendimento li {
+    margin-bottom: 8px;
+    /* Define um espaçamento entre os itens da lista */
+}
+
+.institucional {
+    text-align: left;
+    /* Alinha o conteúdo da seção à esquerda */
+    margin-left: 600px;
+    /* Adiciona uma margem de 600px à esquerda da seção */
+    font-size: 12px;
+    /* Define o tamanho da fonte como 12px */
+    margin-top: -138px;
+    /* Aplica uma margem negativa de 138px no topo da seção, movendo-a para cima */
+}
+
+.institucional ol {
+    list-style-type: none;
+    /* Remove os marcadores (números ou pontos) da lista */
+    margin-left: 20px;
+    /* Adiciona uma margem à esquerda da lista, afastando-a da borda */
+    margin-top: 8px;
+    /* Adiciona uma margem superior de 8px à lista */
+}
+
+.institucional li {
+    margin-bottom: 8px;
+    /* Adiciona uma margem de 8px abaixo de cada item da lista */
+}
+
+.institucional h4 {
+    display: block;
+    /* Faz com que o cabeçalho ocupe uma linha inteira */
+    font-size: 1.17em;
+    /* Define o tamanho da fonte como 1.17 vezes o tamanho da fonte pai */
+    margin-block-start: 1em;
+    /* Adiciona uma margem superior de 1em antes do cabeçalho */
+    margin-block-end: 1em;
+    /* Adiciona uma margem inferior de 1em após o cabeçalho */
+    margin-inline-start: 0px;
+    /* Remove a margem à esquerda do cabeçalho */
+    margin-inline-end: 0px;
+    /* Remove a margem à direita do cabeçalho */
+    font-weight: bold;
+    /* Deixa o texto do cabeçalho em negrito */
+    unicode-bidi: isolate;
+    /* Garante que a direção do texto seja isolada, útil para textos com direções diferentes */
+}
+
+.cnpj {
+    text-align: center;
+    /* Centraliza o conteúdo dentro da seção */
+    margin-top: 80px;
+    /* Espaço superior para separar da seção anterior */
+}
+
+.cnpj h5 {
+    margin-bottom: 10px;
+    /* Adiciona um espaçamento abaixo do título h3 */
+    font-size: 12px;
+    /* Ajusta o tamanho da fonte do título CNPJ */
+    font-weight: bold;
+    /* Torna o título mais destacado */
+}
+
+.cnpj h6 {
+    font-size: 12px;
+    /* Ajusta o tamanho da fonte do CNPJ */
+    font-weight: normal;
+    /* Deixa o texto do CNPJ com o peso de fonte normal */
+}
+
+.cnpj h7 {
+    font-size: 12px;
+    /* Ajusta o tamanho da fonte do CNPJ */
+    font-weight: normal;
+    /* Deixa o texto do CNPJ com o peso de fonte normal */
+}
+
+.redes ul li img {
+    max-width: 40px;
+    /* Define a largura máxima da imagem para 40px */
+    max-height: 40px;
+    /* Define a altura máxima da imagem para 40px */
+    width: auto;
+    /* A largura da imagem é ajustada automaticamente para manter as proporções */
+    height: auto;
+    /* A altura da imagem é ajustada automaticamente para manter as proporções */
+}
+
+.redes {
+    text-align: center;
+    /* Centraliza o conteúdo (por exemplo, ícones de redes sociais) dentro da seção */
+    position: absolute;
+    /* Define o posicionamento absoluto da seção */
+    top: 50%;
+    /* Posiciona a seção verticalmente no meio da página */
+    right: 0;
+    /* Alinha a seção à margem direita da página */
+    transform: translateY(-50%);
+    /* Ajusta o posicionamento vertical para garantir que a seção fique perfeitamente centralizada */
+    padding-right: 80px;
+    /* Adiciona 80px de espaço extra à direita da seção */
+}
+
+.redes ul {
+    display: flex;
+    /* Exibe os itens da lista em linha (horizontalmente) */
+    gap: 20px;
+    /* Define um espaço de 20px entre os itens */
+    list-style-type: none;
+    /* Remove os marcadores padrão dos itens da lista */
+    padding: 0;
+    /* Remove o preenchimento padrão da lista */
+    margin: 0;
+    /* Remove a margem padrão da lista */
+}
+
+.redes h8 {
+    display: block;
+    /* Faz o título ocupar o espaço de um bloco */
+    font-size: 15px;
+    /* Define o tamanho da fonte para o título */
+    margin-block-start: 1em;
+    /* Adiciona uma margem superior de 1em antes do título */
+    margin-block-end: 1em;
+    /* Adiciona uma margem inferior de 1em após o título */
+    margin-inline-start: 0px;
+    /* Remove a margem à esquerda */
+    margin-inline-end: 0px;
+    /* Remove a margem à direita */
+    font-weight: bold;
+    /* Torna o título em negrito */
+    unicode-bidi: isolate;
+    /* Impede que o texto herde propriedades de direção de texto externas */
+}
